@@ -40,10 +40,10 @@ def input_pdf_setup(uploaded_file):
         raise FileNotFoundError("No file uploaded")
 
 # Streamlit App
-st.set_page_config(page_title="ATS Resume EXpert")
-st.header("ATS Tracking System")
+st.set_page_config(page_title="ATS Resume Checker")
+st.header("ATS Resume Checking Tool")
 input_text=st.text_area("Job Description: ",key="input")
-uploaded_file=st.file_uploader("Upload your resume(PDF)...",type=["pdf"])
+uploaded_file=st.file_uploader("Upload your Resume (PDF)",type=["pdf"])
 
 if uploaded_file is not None:
     st.write("PDF Uploaded Successfully")
