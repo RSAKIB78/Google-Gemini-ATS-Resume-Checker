@@ -28,6 +28,12 @@ This project is a web application that integrates with the Google Gemini API to 
     pip install -r requirements.txt
     ```
 
+4. Install other dependencies:
+    ```sh
+    brew install poppler
+    ```
+
+
 ## Usage
 
 1. Run the application:
