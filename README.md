@@ -41,9 +41,11 @@ This project is a web application that integrates with the Google Gemini API to 
     streamlit run app.py
     ```
 
-2. Open your web browser and go to `http://localhost:8501`.
+2. Add your Gemini API key to .env
 
-3. Upload a PDF resume and click the appropriate button to get a response.
+3. Open your web browser and go to `http://localhost:8501`.
+
+4. Upload a PDF resume and click the appropriate button to get a response.
 
 ## Contributing
 
