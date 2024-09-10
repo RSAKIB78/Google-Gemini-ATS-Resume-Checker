@@ -21,7 +21,7 @@ def get_gemini_response(input,pdf_cotent,prompt):
 # Define the function to convert the PDF to image
 def input_pdf_setup(uploaded_file):
     if uploaded_file is not None:
-        ## Convert the PDF to image
+        # Convert the PDF to image
         images=pdf2image.convert_from_bytes(uploaded_file.read())
         first_page=images[0]
 
