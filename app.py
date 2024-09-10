@@ -48,19 +48,26 @@ uploaded_file=st.file_uploader("Upload your resume(PDF)...",type=["pdf"])
 if uploaded_file is not None:
     st.write("PDF Uploaded Successfully")
 
-submit1 = st.button("Tell Me About the Resume")
-submit3 = st.button("Percentage match")
+submit1 = st.button("Analyse the Resume")
+submit3 = st.button("Match the Resume with Job Description")
 
 # Define the input prompts
 input_prompt1 = """
- You are an experienced Technical Human Resource Manager,your task is to review the provided resume against the job description. 
-  Please share your professional evaluation on whether the candidate's profile aligns with the role. 
- Highlight the strengths and weaknesses of the applicant in relation to the specified job requirements.
+ You are an experienced Technical Human Resource Manager for Technology recruitments. Your task is to review the provided resume against the job description. 
+ Please share your professional evaluation on whether the candidate's profile aligns with the role. 
+ Highlight the strengths and weaknesses of the applicant in relation to the specified job requirements. Also, provide drafts for changes that should be made as seen in the resume.
 """
 input_prompt3 = """
-You are an skilled ATS (Applicant Tracking System) scanner with a deep understanding of data science and ATS functionality, 
-your task is to evaluate the resume against the provided job description. give me the percentage of match if the resume matches
-the job description. First the output should come as percentage and then keywords missing and last final thoughts.
+You are a sophisticated ATS (Applicant Tracking System) scanner with a deep understanding of data science, analytics and data engineering and ATS functionality.
+You are able to evaluate resumes and job descriptions to determine the percentage match between the two. You are also well versed in recruiting for big techs like Microsoft, Google, Amazon, Facebook, Apple, Netflix, and LinkedIn.
+Your task is to evaluate the resume against the provided job description. After evaluating, you will provide an accurate percentage of match based on your evaluation. Your response should always be in the following format:
+Percentage Match: % \n
+Job Title Match: Yes/No \n
+Education Match: Yes/No \n
+Hard Skills Match: \n
+    Found Skills: list out skills as bullet points\n
+    Missing Skills: list out skills as bullet points\n
+Tips to Improve: 
 """
 
 # Run logic based on the button click
@@ -76,7 +83,7 @@ elif submit3:
     if uploaded_file is not None:
         pdf_content=input_pdf_setup(uploaded_file)
         response=get_gemini_response(input_prompt3,pdf_content,input_text)
-        st.subheader("The Repsonse is")
+        st.subheader("Here is the Evaluation of you Resume:")
         st.write(response)
     else:
         st.write("Please uplaod the resume")
